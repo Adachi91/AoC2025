@@ -3,7 +3,7 @@
 | ----------------- | --------- |-------- |
 | Day 1|Gold|C#
 
-[](/assets/img/xmas.png)
+![](/assets/img/xmas.png)
 
 ### Links & Contact
 * Email: Adachi9119@gmail.com
@@ -14,5 +14,6 @@
 * Stoat: https://stoat.chat/invite/AQX1wWNX (or code `AQX1wWNX`)
 
 ### Support Link
-If you would like to support me thi one of the few services I have.
+If you would like to support me thi one of the few services I have.    
+
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/adachi91)
