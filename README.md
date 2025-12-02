@@ -1,7 +1,7 @@
 # Advent of Code 2025
 |Day|Success|Language|
 | ----------------- | --------- |-------- |
-| Day 1|Gold|C#
+| [Day 1](https://github.com/Adachi91/01)|Gold|C#
 
 ![](/assets/img/xmas.png)
 
