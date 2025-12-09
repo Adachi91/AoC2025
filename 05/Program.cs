@@ -2,6 +2,7 @@
 //Console.WriteLine("Hello, World!");
 
 using System;
+using System.Numerics;
 using System.Text;
 
 string fileName = @"input1.txt";
@@ -15,10 +16,12 @@ if (fresh_Selpie == null) throw new Exception("You gave me an empty list, meow."
 moo moo = new(fresh_Selpie);
 
 Console.WriteLine($"Hello stranger, would you like a snickerdoodle cookie? I have {moo.GetCookies} of them.");
+Console.WriteLine($"Would you also like some Mexican Wedding cookies? They pair quite well with winter. I have {moo.GetMexicanWeddingCookies} left."); // This gave me 359913027576322000 // using bigint: 359913027576322000
 
 public class moo {
     private long[] ProductIDs = new long[] { };
     private int Snickerdoodles = 0; // Sum of good ingrediants.
+    private BigInteger MexicanWeddingCookies = 0;
 
     public moo(string[] Inventree) {
         List<Blocks> BlockCollection = new();
@@ -63,13 +66,12 @@ public class moo {
 
         int BlockID = 1;
         foreach (var Block in OptimizedBlocks) {
-            ///if (Block.IsDead) continue;
             Console.WriteLine($"{BlockID++}: {Block.GetMinimum}-{Block.GetMaximum}");
+            MexicanWeddingCookies += Block.GetSum(); // Part 2 addition
         }
 
         foreach (long product in ProductIDs) {
             foreach (var Block in OptimizedBlocks) {
-                ///if (Block.IsDead) continue;
                 if (product >= Block.GetMinimum && product <= Block.GetMaximum) {
                     Snickerdoodles++;
                     continue;
@@ -80,26 +82,55 @@ public class moo {
 
 
     public long GetCookies => Snickerdoodles;
+    public BigInteger GetMexicanWeddingCookies => MexicanWeddingCookies;
 }
 
 public class Blocks {
-    private bool _Dead { get; set; } = false;
     private long _Minimum { get; set; } = 0;
     private long _Maximum { get; set; } = 0;
+    private long _Sum { get; set; } = 0;
 
 
+    /// <summary>
+    ///  Construct a new block with a minimum and maximum value range.
+    /// </summary>
+    /// <param name="Min">The minimum size of the block range.</param>
+    /// <param name="Max">The maximum size of the block range.</param>
     public Blocks(long Min, long Max) {
         _Minimum = Min;
         _Maximum = Max;
     }
 
 
+    /// <summary>
+    ///  Update the block range
+    /// </summary>
+    /// <param name="min">The minimum size of the block range.</param>
+    /// <param name="max">The maximum size of the block range.</param>
     public void UpdateBlock(long min, long max) {
         _Minimum = min;
         _Maximum = max;
     }
 
 
+    /// <summary>
+    ///  Get the total sum of all good foodstuffs.
+    /// </summary>
+    /// <returns><see cref="long"/> - num of good foodstuffs in this block</returns>
+    public long GetSum() { // STILL A JOKE
+        if (_Maximum > _Minimum)
+            return _Maximum - _Minimum + 1;
+        else
+            return _Minimum - _Maximum + 1;
+
+        for (int i = 0; i <= _Maximum; i++) // Still funny to think about. Hold my Epyc.
+            _Sum++;
+
+        return _Sum;
+    }
+
+
+    public long CheckSum => _Sum; // IT'S A JOKE
     public long GetMinimum => _Minimum;
     public long GetMaximum => _Maximum;
 }
