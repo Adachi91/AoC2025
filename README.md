@@ -3,9 +3,10 @@
 | ----------------- | --------- |-------- |
 | [Day 1](https://github.com/Adachi91/01)|2 Gold|C#
 | [Day 2](./002/)|2 Gold|C#
-| [Day 3](./03/) | 1 Gold | Lua
-| Day 4| Skipped - couldn't conceptualize how to handle it. | N/A
-| [Day 5](./05/)| 2 Gold | C#
+| [Day 3](./03/)|1 Gold|Lua
+| Day 4| Skipped. couldn't conceptualize how to handle it. | N/A
+| [Day 5](./05/)|2 Gold|C#
+
 ![](/assets/img/xmas.png)
 
 ### Links & Contact
